@@ -1,0 +1,21 @@
+[
+  {
+    "date": "2025-11-12",
+    "title": "Guest Lecture: Contemporary Design Practices",
+    "time": "15:00",
+    "location": "Auditorium"
+  },
+  {
+    "date": "2025-11-18",
+    "title": "Portfolio Review Submission Deadline",
+    "time": "23:59",
+    "location": "Online"
+  },
+  {
+    "date": "2025-11-25",
+    "title": "Thanksgiving Break (Campus closed)",
+    "time": "",
+    "location": "",
+    "allDay": true
+  }
+]

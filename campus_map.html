@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Map - Design Program</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Design Program</a>
+            <a class="navbar-brand fw-bold" href="index.html">Campus Resources</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">Dining</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dining.html">Dining</a></li>
+                    <li class="nav-item"><a class="nav-link" href="health_services.html">Health Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
                     <li class="nav-item"><a class="nav-link active" href="campus_map.html">Campus Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tutoring.html">Tutoring</a></li>
                 </ul>
             </div>
         </div>
@@ -26,7 +30,6 @@
         <h1>Campus Map</h1>
         <div class="row">
             <div class="col-lg-8">
-                <!-- Placeholder for map image -->
                 <div class="map-container">
                     <img src="images/campus-map.jpg" alt="Campus Map" class="img-fluid">
                 </div>
@@ -36,18 +39,9 @@
                     <div class="card-body">
                         <h2 class="card-title h4">Key Locations</h2>
                         <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <strong>Design Building</strong><br>
-                                Located in the heart of campus
-                            </li>
-                            <li class="mb-3">
-                                <strong>Student Center</strong><br>
-                                Main dining and gathering space
-                            </li>
-                            <li class="mb-3">
-                                <strong>Library</strong><br>
-                                Resources and study spaces
-                            </li>
+                            <li class="mb-3"><strong>Design Building</strong><br>Located in the heart of campus</li>
+                            <li class="mb-3"><strong>Student Center</strong><br>Main dining and gathering space</li>
+                            <li class="mb-3"><strong>Library</strong><br>Resources and study spaces</li>
                         </ul>
                     </div>
                 </div>
@@ -60,5 +54,8 @@
             <p class="text-center mb-0">&copy; 2025 Design Program. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
