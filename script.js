@@ -27,6 +27,69 @@ ready(function() {
   });
 });
 
+// FullCalendar initialization for an interactive calendar on `calendar.html`
+ready(function initFullCalendar() {
+  var calendarEl = document.getElementById('calendar');
+  if (!calendarEl) return; // only run on calendar page
+
+  // Load events from the same JSON source and map to FullCalendar format
+  fetch('data/events.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error('Network response was not ok');
+      return res.json();
+    })
+    .then(function(events) {
+      var fcEvents = (Array.isArray(events) ? events : []).map(function(ev) {
+        // If a time is provided, combine date and time into an ISO datetime
+        var start = ev.date || null;
+        if (ev.time && ev.time.trim()) {
+          // assume time like "14:00" — attach to date
+          // FullCalendar accepts YYYY-MM-DDTHH:MM:SS or YYYY-MM-DDTHH:MM
+          start = (ev.date || '') + 'T' + ev.time;
+        }
+
+        return {
+          id: ev.id || undefined,
+          title: ev.title || 'Untitled',
+          start: start,
+          allDay: !!ev.allDay || !ev.time || ev.time === '',
+          extendedProps: {
+            location: ev.location || ''
+          }
+        };
+      });
+
+      // Create FullCalendar instance
+      try {
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,dayGridWeek,listWeek'
+          },
+          events: fcEvents,
+          eventClick: function(info) {
+            var e = info.event;
+            var when = e.start ? e.start.toLocaleString() : '';
+            var loc = e.extendedProps && e.extendedProps.location ? '\nLocation: ' + e.extendedProps.location : '';
+            // Simple details popup — you can replace with a Bootstrap modal if you prefer
+            alert(e.title + '\n' + when + loc);
+          }
+        });
+
+        calendar.render();
+      } catch (err) {
+        console.warn('FullCalendar failed to initialize', err);
+        calendarEl.innerHTML = '<p class="text-muted">Interactive calendar failed to load.</p>';
+      }
+    })
+    .catch(function(err) {
+      console.warn('Failed to load events for FullCalendar:', err);
+      calendarEl.innerHTML = '<p class="text-muted">Could not load calendar events.</p>';
+    });
+});
+
 // Small helper to set an "active" class on nav links based on the current path (useful if server doesn't set it)
 ready(function() {
   try {

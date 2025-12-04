@@ -6,6 +6,8 @@
     <title>Calendar - Design Program</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
@@ -52,7 +54,8 @@
             <!-- Should I have an event and academic calendar or one combined? -->
             <h2>Visual Calendar</h2>
             <div class="map-container">
-                <img src="images/calendar.jpg" alt="Campus Calendar" class="img-fluid">
+                <!-- Interactive calendar will render here -->
+                <div id="calendar"></div>
             </div>
         </section>
 
@@ -64,6 +67,8 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
