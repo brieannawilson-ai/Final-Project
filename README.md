@@ -66,9 +66,4 @@ Potential future improvements / stretch goals
 - Recurring events support (RRULE) and timezone-aware event handling.
 - Improve accessibility (ARIA attributes, keyboard navigation, contrast testing) and run automated audits.
 - Add image lightbox/gallery for dining and campus photos.
-- Automated tests (unit tests for small JS helpers, and end-to-end smoke tests for pages).
-
-Contact & contribution
-----------------------
-
-If you want help extending the project (deploying functions, wiring a DB, auth), open an issue or a PR. The repository includes commit history; feel free to fork and experiment.
+- Add a page about Campus Traditions 
